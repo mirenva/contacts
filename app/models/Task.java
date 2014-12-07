@@ -16,36 +16,11 @@ public class Task extends Model {
   
   @Required
   public String name;
-  public String h_number;
+  
+  @Required
   public String m_number;
   
-  public void setId(Long id) {
-	this.id = id;
-  }
-  public Long getId() {
-    return id;
-  }
-  
-  public void setName(String name) {
-	this.name = name;
-  }
-  public String getName() {
-    return name;
-  }
-
-  public void setH_number(String number) {
-	this.h_number = number;
-  }
-  public String getH_number() {
-    return h_number;
-  }
-  
-  public void setM_number(String number) {
-	this.m_number = number;
-  }
-  public String getM_number() {
-    return m_number;
-  }
+  public String h_number;
   
   public static Finder<Long,Task> find = new Finder(
     Long.class, Task.class
@@ -65,5 +40,36 @@ public class Task extends Model {
   
   public static void edit(Task task) {
     task.update();
-  }  
+  }
+
+  
+//пусть останется на всякий случай
+  
+//  public void setId(Long id) {
+//	this.id = id;
+//  }
+//  public Long getId() {
+//    return id;
+//  }
+  
+//  public void setName(String name) {
+//	this.name = name;
+//  }
+//  public String getName() {
+//    return name;
+//  }
+
+//  public void setH_number(String number) {
+//	this.h_number = number;
+//  }
+//  public String getH_number() {
+//    return h_number;
+//  }
+  
+//  public void setM_number(String number) {
+//	this.m_number = number;
+//  }
+//  public String getM_number() {
+//    return m_number;
+//  }
 }

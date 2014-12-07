@@ -1,6 +1,7 @@
-@(tasks: List[Task], taskForm: Form[Task])
+@(taskForm: Form[Task])
 
 @import helper._
+@import helpers._
 
 <HTML>
 
@@ -8,19 +9,19 @@
     
     <h2>Editing:</h2>
     
-    @form(routes.Application.editTask(taskForm.get().getId())) {
-		<input type="hidden" name="id" value="@taskForm.get().getId()"/>
-        <div class="col-xs-2">
-        <input type=text class="form-control" name="name" placeholder="Name" value="@taskForm.get().getName()"/>
-		</div>
-        <div class="col-xs-2">
-        <input type=tel class="form-control" name="m_number" placeholder="Mobile phone" value="@taskForm.get().getM_number()"/>
-		</div>
-        <div class="col-xs-2">
-		<input type=tel class="form-control" name="h_number" placeholder="Home phone" value="@taskForm.get().getH_number()"/>
-		</div>        
-        <input type="submit" value="Save" class="btn btn-success">
-        
+    @form(routes.Application.editTask(taskForm.get().id)) {
+	
+		@help_input(taskForm("id"), "id", 'type->"hidden")
+		
+		<div>
+            @help_input(taskForm("name"), "Name", 'type->"text")
+            @help_input(taskForm("m_number"), "Mobile phone", 'type->"tel")
+            @help_input(taskForm("h_number"), "Home phone", 'type->"tel")
+        </div>
+		
+        <div>
+            @help_btn("Save", 'class->"btn-success")
+        </div>
     }
     
 }

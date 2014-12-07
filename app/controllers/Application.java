@@ -45,7 +45,7 @@ static Form<Task> taskForm = form(Task.class);
 	}
 	Form<Task> filledForm = taskForm.fill(t);
 	return ok(
-		views.html.editpage.render(Task.all(), filledForm)
+		views.html.editpage.render(filledForm)
 	);
   }
   
@@ -53,7 +53,7 @@ static Form<Task> taskForm = form(Task.class);
 	Form<Task> filledForm = taskForm.bindFromRequest();
     if(filledForm.hasErrors()) {
       return badRequest(
-        views.html.editpage.render(Task.all(), filledForm)
+        views.html.editpage.render(filledForm)
       );
     } else {
       Task.edit(filledForm.get());

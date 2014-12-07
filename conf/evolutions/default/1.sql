@@ -6,8 +6,8 @@
 create table task (
   id                        bigint not null,
   name                      varchar(255),
-  h_number                  varchar(255),
   m_number                  varchar(255),
+  h_number                  varchar(255),
   constraint pk_task primary key (id))
 ;
 
