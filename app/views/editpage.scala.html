@@ -1,0 +1,28 @@
+@(tasks: List[Task], taskForm: Form[Task])
+
+@import helper._
+
+<HTML>
+
+@main("Edit page") {
+    
+    <h2>Editing:</h2>
+    
+    @form(routes.Application.editTask(taskForm.get().id)) {
+		<input type="hidden" name="id" value="@taskForm.get().id"/>
+        <div class="col-xs-2">
+        <input type=text class="form-control" name="name" placeholder="Name" value="@taskForm.get().name"/>
+		</div>
+        <div class="col-xs-2">
+        <input type=tel class="form-control" name="m_number" placeholder="Mobile phone" value="@taskForm.get().m_number"/>
+		</div>
+        <div class="col-xs-2">
+		<input type=tel class="form-control" name="h_number" placeholder="Home phone" value="@taskForm.get().h_number"/>
+		</div>        
+        <input type="submit" value="Save" class="btn btn-success">
+        
+    }
+    
+}
+
+</HTML>
