@@ -5,8 +5,8 @@
 <HTML>
 
 @main("Contacts") {
-    
-    <h1>@tasks.size() contact(s)</h1>
+    @if(tasks.size()>0){
+    <h1>@tasks.size() contact@if(tasks.size()>1){s}</h1>
     
 	<table border=1px class="table table-striped" width="700px">
 		<tr>
@@ -33,6 +33,7 @@
 			</tr>
 		}
 	</table>
+	}
 	
     <h2>Add a new contact:</h2>
     
