@@ -7,20 +7,20 @@
 
 @main("Edit page") {
     
-    <h2>Editing:</h2>
-    
-    @form(routes.Application.editTask(taskForm.get().id)) {
+    <h2 align="center">Editing:</h2>
 	
-		@help_input(taskForm("id"), "id", 'type->"hidden")
+    @form(routes.Application.editTask(taskForm.get().getId)) {
+	
+		@helpInput(taskForm("id"), "id", 'type->"hidden")
 		
 		<div>
-            @help_input(taskForm("name"), "Name", 'type->"text")
-            @help_input(taskForm("m_number"), "Mobile phone", 'type->"tel")
-            @help_input(taskForm("h_number"), "Home phone", 'type->"tel")
+            @helpInput(taskForm("name"), "Name", 'type->"text")
+            @helpInput(taskForm("mNumber"), "Mobile phone", 'type->"tel")
+            @helpInput(taskForm("hNumber"), "Home phone", 'type->"tel")
         </div>
 		
         <div>
-            @help_btn("Save", 'class->"btn-success")
+            @helpBtn("Save", 'class->"btn-success")
         </div>
     }
     

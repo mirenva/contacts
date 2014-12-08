@@ -9,7 +9,7 @@
     @if(tasks.size()>0){
     <h1>@tasks.size() contact@if(tasks.size()>1){s}</h1>
     
-	<table border=1px class="table table-striped" width="700px">
+	<table class="table table-striped" width="700px">
 		<tr>
 			<td width="100px">Name</td>
 			<td width="150px">Mobile number</td>
@@ -20,14 +20,14 @@
 		@for(task <- tasks) {
 			<tr>
 				<td>@task.name</td>
-				<td>@task.m_number</td>
-				<td>@task.h_number</td>
+				<td>@task.mNumber</td>
+				<td>@task.hNumber</td>
 				<td>@form(routes.Application.editTaskForm(task.id)) {
-						@help_btn("Edit", 'class->"btn-warning")
+						@helpBtn("Edit", 'class->"btn-warning")
 					}
 				</td>
 				<td>@form(routes.Application.deleteTask(task.id)) {
-						@help_btn("Delete", 'class->"btn-danger")
+						@helpBtn("Delete", 'class->"btn-danger")
 					}
 				</td>
 			</tr>
@@ -38,11 +38,11 @@
     <h2>Add a new contact:</h2>
     
     @form(routes.Application.newTask()) {
-		@help_input(taskForm("name"), "Name", 'type->"text")
-		@help_input(taskForm("m_number"), "Mobile phone", 'type->"tel")
-        @help_input(taskForm("h_number"), "Home phone", 'type->"tel")
+		@helpInput(taskForm("name"), "Name", 'type->"text")
+		@helpInput(taskForm("mNumber"), "Mobile phone", 'type->"tel")
+        @helpInput(taskForm("hNumber"), "Home phone", 'type->"tel")
 
-        @help_btn("Create")
+        @helpBtn("Create")
         
     }
     

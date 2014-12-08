@@ -51,6 +51,7 @@ static Form<Task> taskForm = form(Task.class);
   
   public static Result editTask(Long id) {
 	Form<Task> filledForm = taskForm.bindFromRequest();
+//	System.out.println(filledForm);
     if(filledForm.hasErrors()) {
       return badRequest(
         views.html.editpage.render(filledForm)
